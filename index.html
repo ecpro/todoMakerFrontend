@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo App</title>
+    <!-- Bootstrap -->
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" ng-controller="todoController as todoCtrl">
+
+        <div class="row justify-content-center" ng-init="init()">
+            <div class="col-sm-6 offset-sm-4"><h2>TODO APP</h2></div>
+        </div>
+
+        <div class="row justify-content-center addTask">
+            <form action="" class="form-inline" novalidate ng-submit="submitForm()">
+                <div class="input-group mb-5">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Task</span>
+                    </div>
+                    <textarea name="" id="" cols="60" rows="1" class="form-control" ng-model="formData.todo"></textarea>
+                    <div class="input-group-append">
+                        <select class="form-control" ng-model="formData.status">
+                            <option value="">
+                                <option value="PENDING">PENDING
+                                    <option value="COMPLETED">COMPLETED
+                        </select>
+                        <input type="submit" class="btn btn-outline-secondary" type=""></input>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <div class="row justify-content-center" ng-repeat="task in tasks">
+                <div class="col-sm-6 offset-sm-2 task">
+                    <p>{{task.todo}}
+                        <small>{{task.status}}</small>
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#" class="btn btn-sm btn-danger" ng-click="removeTask(task.id)">Delete</a>
+                    <a href="#" class="btn btn-sm btn-primary" ng-click="updateStatus(task.id, task)">Change Status</a>
+                </div>
+            </div>
+        </div>
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

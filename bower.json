@@ -1,0 +1,17 @@
+{
+  "name": "todoApp",
+  "authors": [
+    "Piyush Ravi <mails4ipiyush@gmail.com>"
+  ],
+  "description": "app to add/remove task to todo list",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
